@@ -1,6 +1,6 @@
-const express = require('express');
-const app     = express();
-const path    = require('path');
+const express          = require('express');
+const app              = express();
+const path             = require('path');
 const stateCoordinates = require('./public/stateCoordinates');
 
 const urlLogger = (request, response, next) => {
@@ -16,7 +16,6 @@ const timeLogger = (request, response, next) => {
 app.use(urlLogger, timeLogger);
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.get('/', (request, response) => {
   response.send('hello world');
